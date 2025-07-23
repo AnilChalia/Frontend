@@ -41,24 +41,26 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
 
   return (
     <>
-      <div className="flex h-[calc(100vh-3.5rem)] w-[320px] max-w-[350px] flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800">
+      <div className="flex h-[calc(100vh-3.5rem)] w-1/3 min-w-[200px] max-w-[350px] flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800 text-sm px-2 sm:text-base sm:px-5">
         <div className="mx-5 flex flex-col items-start justify-between gap-2 gap-y-4 border-b border-richblack-600 py-5 text-lg font-bold text-richblack-25">
-          <div className="flex w-full items-center justify-between ">
+       
+          <div className="flex w-full items-center justify-between">
             <div
               onClick={() => {
                 navigate(`/dashboard/enrolled-courses`)
               }}
-              className="flex h-[35px] w-[35px] items-center justify-center rounded-full bg-richblack-100 p-1 text-richblack-700 hover:scale-90"
+              className="flex h-[35px] w-[35px] sm:pr-3 items-center justify-center rounded-full bg-richblack-100 p-1 text-richblack-700 hover:scale-90"
               title="back"
             >
               <IoIosArrowBack size={30} />
             </div>
             <IconBtn
               text="Add Review"
-              customClasses="ml-auto"
+              customClasses="ml-auto sm:ml-0 text-[11px] sm:text-sm leading-tight px-2 sm:px-4 py-[4px] sm:py-2 min-h-[32px] sm:min-h-0 w-[90px] sm:w-fit"
               onclick={() => setReviewModal(true)}
             />
           </div>
+
           <div className="flex flex-col">
             <p>{courseEntireData?.courseName}</p>
             <p className="text-sm font-semibold text-richblack-500">
@@ -130,3 +132,4 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
     </>
   )
 }
+

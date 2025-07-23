@@ -262,11 +262,8 @@ export const deleteSubSection = async (data, token) => {
 // fetching all courses under a specific instructor
 export const fetchInstructorCourses = async (token) => {
   let result = []
-  console.log("outside try")
   const toastId = toast.loading("Loading...")
   try {
-    console.log("inside try")
-    // console.log("GET ALL INTRUCTORM API",GET_ALL_INSTRUCTOR_COURSES_API);
     const response = await apiConnector(
       "GET",  
       GET_ALL_INSTRUCTOR_COURSES_API,

@@ -5,13 +5,17 @@
 html,
 body {
   overflow-x: hidden;
+  max-width: 100vw;
 }
+
 
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {
   scrollbar-width: auto;
   scrollbar-color: #afb2bf;
+  box-sizing: border-box;
+
 }
 
 /* Chrome, Edge, and Safari */

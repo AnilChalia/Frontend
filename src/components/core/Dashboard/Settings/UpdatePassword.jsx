@@ -33,10 +33,11 @@ export default function UpdatePassword() {
     <>
       <form onSubmit={handleSubmit(submitPasswordForm)}>
         <div className="my-10 flex flex-col gap-y-6 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12">
-          <h2 className="text-lg font-semibold text-richblack-5">Password</h2>
+          <h2 className="text-lg font-semibold text-richblack-5 sm:text-[5px]">Password</h2>
           <div className="flex flex-col gap-5 lg:flex-row">
-            <div className="relative flex flex-col gap-2 lg:w-[48%]">
-              <label htmlFor="oldPassword" className="lable-style">
+            
+            <div className="relative flex flex-col gap-2 w-full sm:w-1/2">
+              <label htmlFor="oldPassword" className="lable-style sm:text-sm break-words">
                 Current Password
               </label>
               <input
@@ -63,8 +64,9 @@ export default function UpdatePassword() {
                 </span>
               )}
             </div>
-            <div className="relative flex flex-col gap-2 lg:w-[48%]">
-              <label htmlFor="newPassword" className="lable-style">
+
+            <div className="relative flex flex-col gap-2 w-full  sm:w-1/2">
+              <label htmlFor="newPassword" className="lable-style sm:text-sm break-words">
                 New Password
               </label>
               <input
@@ -91,9 +93,11 @@ export default function UpdatePassword() {
                 </span>
               )}
             </div>
+
           </div>
         </div>
-        <div className="flex justify-end gap-2">
+
+        <div className="flex flex-col sm:flex-row justify-end gap-2 w-full">
           <button
             onClick={() => {
               navigate("/dashboard/my-profile")
@@ -102,7 +106,7 @@ export default function UpdatePassword() {
           >
             Cancel
           </button>
-          <IconBtn type="submit" text="Update" />
+          <IconBtn type="submit" text="Update" customClasses="w-full sm:w-auto justify-center" />
         </div>
       </form>
     </>

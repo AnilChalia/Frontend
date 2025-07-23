@@ -3,12 +3,13 @@ import RenderSteps from "./RenderSteps"
 export default function AddCourse() {
   return (
     <>
-      <div className="flex w-full items-start gap-x-6">
-        <div className="flex flex-1 flex-col">
-          <h1 className="mb-14 text-3xl font-medium text-richblack-5">
+      <div className="flex w-full items-start overflow-x-hidden gap-x-6 min-h-screen">
+        <div className="flex flex-1 flex-col min-h-[80vh]">
+          <h1 className="mb-14 text-3xl font-medium text-richblack-5  max-sm:text-[25px] ">
             Add Course
           </h1>
-          <div className="flex-1">
+
+          <div className="flex-1 overflow-x-hidden min-h-[600px]">
             <RenderSteps />
           </div>
         </div>
@@ -33,6 +34,9 @@ export default function AddCourse() {
           </ul>
         </div>
       </div>
-    </>
+   </>
   )
 }
+
+
+

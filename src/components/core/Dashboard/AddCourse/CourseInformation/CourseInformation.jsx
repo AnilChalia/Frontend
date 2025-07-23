@@ -17,7 +17,6 @@ import Upload from "../Upload"
 import ChipInput from "./ChipInput"
 import RequirementsField from "./RequirementField"
 
-
 export default function CourseInformationForm() {
   const {
     register,
@@ -159,10 +158,10 @@ export default function CourseInformationForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="space-y-8  rounded-md border-[1px] overflow-y-hidden overflow-x-hidden border-richblack-700 bg-richblack-800 p-6"
+      className="space-y-8 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-6"
     >
       {/* Course Title */}
-      <div className="flex flex-col space-y-2 ">
+      <div className="flex flex-col space-y-2">
         <label className="text-sm text-richblack-5" htmlFor="courseTitle">
           Course Title <sup className="text-pink-200">*</sup>
         </label>
@@ -170,7 +169,7 @@ export default function CourseInformationForm() {
           id="courseTitle"
           placeholder="Enter Course Title"
           {...register("courseTitle", { required: true })}
-          className="form-style w-full"
+          className="form-style w-full text-sm max-[640px]:text-xs max-[640px]:px-2 max-[640px]:py-1"
         />
         {errors.courseTitle && (
           <span className="ml-2 text-xs tracking-wide text-pink-200">
@@ -178,6 +177,7 @@ export default function CourseInformationForm() {
           </span>
         )}
       </div>
+
       {/* Course Short Description */}
       <div className="flex flex-col space-y-2">
         <label className="text-sm text-richblack-5" htmlFor="courseShortDesc">
@@ -195,6 +195,7 @@ export default function CourseInformationForm() {
           </span>
         )}
       </div>
+
       {/* Course Price */}
       <div className="flex flex-col space-y-2">
         <label className="text-sm text-richblack-5" htmlFor="coursePrice">
@@ -221,6 +222,7 @@ export default function CourseInformationForm() {
           </span>
         )}
       </div>
+
       {/* Course Category */}
       <div className="flex flex-col space-y-2">
         <label className="text-sm text-richblack-5" htmlFor="courseCategory">
@@ -248,6 +250,7 @@ export default function CourseInformationForm() {
           </span>
         )}
       </div>
+
       {/* Course Tags */}
       <ChipInput
         label="Tags"
@@ -267,6 +270,7 @@ export default function CourseInformationForm() {
         errors={errors}
         editData={editCourse ? course?.thumbnail : null}
       />
+
       {/* Benefits of the course */}
       <div className="flex flex-col space-y-2">
         <label className="text-sm text-richblack-5" htmlFor="courseBenefits">
@@ -284,6 +288,7 @@ export default function CourseInformationForm() {
           </span>
         )}
       </div>
+
       {/* Requirements/Instructions */}
       <RequirementsField
         name="courseRequirements"
@@ -293,8 +298,9 @@ export default function CourseInformationForm() {
         errors={errors}
         getValues={getValues}
       />
-      {/* Next Button */}
-      <div className="flex justify-end gap-x-2">
+
+      {/* Next Button flex justify-end gap-x-2*/}
+      <div className="flex flex-col-reverse sm:flex-row justify-end gap-4">
         {editCourse && (
           <button
             onClick={() => dispatch(setStep(2))}
@@ -305,6 +311,7 @@ export default function CourseInformationForm() {
           </button>
         )}
         <IconBtn
+          customClasses="w-fit"
           disabled={loading}
           text={!editCourse ? "Next" : "Save Changes"}
         >
@@ -313,4 +320,6 @@ export default function CourseInformationForm() {
       </div>
     </form>
   )
+ 
 }
+

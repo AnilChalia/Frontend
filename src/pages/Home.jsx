@@ -42,11 +42,11 @@ const Home = () => {
         </div>
 
         <div className='flex flex-row gap-7 mt-8'>
-            <CTAButton active={true} linkto={"/signup"}> 
+            <CTAButton active={true} linkto={"/about"}> 
                 Learn More
             </CTAButton>
 
-            <CTAButton active={false} linkto={"/login"}> 
+            <CTAButton active={false} linkto={"/signup"}> 
                 Book a Demo
             </CTAButton>
         </div>
@@ -199,7 +199,7 @@ const Home = () => {
 
             <InstructorSection />
 
-            <h2 className='text-center text-4xl font-semobold mt-10'>review from Other Learners</h2>
+            <h2 className='text-center text-4xl font-semobold mt-10'>Review from Other Learners</h2>
             {/* Review Slider here */}
             <ReviewSlider/>
             

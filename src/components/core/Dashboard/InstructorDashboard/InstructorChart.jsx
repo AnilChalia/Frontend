@@ -84,7 +84,7 @@ export default function InstructorChart({ courses }) {
           Income
         </button>
       </div>
-      <div className="relative mx-auto aspect-square h-full w-full min-h[300px] max-h-[400px] overflow-hidden">
+      <div className="relative mx-auto w-full max-w-[400px] min-h-[300px] sm:max-w-[350px] md:max-w-[400px]">
         {/* Render the Pie chart based on the selected chart */}
         <Pie
           data={currChart === "students" ? chartDataStudents : chartIncomeData}
@@ -94,3 +94,5 @@ export default function InstructorChart({ courses }) {
     </div>
   )
 }
+
+

@@ -14,30 +14,46 @@ export default function Instructor() {
   const [instructorData, setInstructorData] = useState([]) // Changed from null to []
   const [courses, setCourses] = useState([])
 
-  useEffect(() => {
-    (async () => {
-      try {
-        setLoading(true)
-        const instructorApiData = await getInstructorData(token)
-        const result = await fetchInstructorCourses(token)
 
-        console.log("Instructor API Data: ", instructorApiData)
-        console.log("Courses API Result: ", result)
+  // useEffect(() => {
+  //   (async () => {
+  //     try {
+  //       setLoading(true)
+  //       const instructorApiData = await getInstructorData(token)
+  //       const result = await fetchInstructorCourses(token)
 
-        if (Array.isArray(instructorApiData)) {
-          setInstructorData(instructorApiData)
-        }
+  //       console.log("Instructor API Data: ", instructorApiData)
+  //       console.log("Courses API Result: ", result)
 
-        if (Array.isArray(result)) {
-          setCourses(result)
-        }
-      } catch (error) {
-        console.error("Error loading instructor dashboard data", error)
-      } finally {
-        setLoading(false)
+  //       if (Array.isArray(instructorApiData)) {
+  //         setInstructorData(instructorApiData)
+  //       }
+
+  //       if (Array.isArray(result)) {
+  //         setCourses(result)
+  //       }
+  //     } catch (error) {
+  //       console.error("Error loading instructor dashboard data", error)
+  //     } finally {
+  //       setLoading(false)
+  //     }
+  //   })()
+  // }, [token])
+
+    useEffect(() => {
+    ;(async () => {
+      setLoading(true)
+      const instructorApiData = await getInstructorData(token)
+      const result = await fetchInstructorCourses(token)
+      console.log(instructorApiData)
+      if (instructorApiData.length) setInstructorData(instructorApiData)
+      if (result) {
+        setCourses(result)
       }
+      setLoading(false)
     })()
-  }, [token])
+  }, [])
+
 
   const totalAmount = instructorData?.reduce(
     (acc, curr) => acc + (curr.totalAmountGenerated || 0),
@@ -64,8 +80,9 @@ export default function Instructor() {
         <div className="spinner"></div>
       ) : courses.length > 0 ? (
         <div>
+
           {/* Top section with chart + stats */}
-          <div className="my-4 flex h-[450px] space-x-4">
+          <div className="my-4 flex flex-col gap-4 lg:flex-row h-auto lg:h-[450px]">
             {totalAmount > 0 || totalStudents > 0 ? (
               <InstructorChart courses={instructorData} />
             ) : (
@@ -83,38 +100,39 @@ export default function Instructor() {
               <div className="mt-4 space-y-4">
                 <div>
                   <p className="text-lg text-richblack-200">Total Courses</p>
-                  <p className="text-3xl font-semibold text-richblack-50">
+                  <p className="text-3xl font-semibold text-richblack-50 max-sm:text-sm">
                     {courses.length}
                   </p>
                 </div>
                 <div>
                   <p className="text-lg text-richblack-200">Total Students</p>
-                  <p className="text-3xl font-semibold text-richblack-50">
+                  <p className="text-3xl font-semibold text-richblack-50 max-sm:text-sm">
                     {totalStudents}
                   </p>
                 </div>
                 <div>
                   <p className="text-lg text-richblack-200">Total Income</p>
-                  <p className="text-3xl font-semibold text-richblack-50">
+                  <p className="text-3xl font-semibold text-richblack-50 max-sm:text-sm">
                     Rs. {totalAmount}
                   </p>
                 </div>
               </div>
             </div>
+
           </div>
 
           {/* Course Preview Section */}
           <div className="rounded-md bg-richblack-800 p-6">
             <div className="flex items-center justify-between">
-              <p className="text-lg font-bold text-richblack-5">Your Courses</p>
+              <p className="text-lg font-bold text-richblack-5 max-sm:text-sm">Your Courses </p>
               <Link to="/dashboard/my-courses">
                 <p className="text-xs font-semibold text-yellow-50">View All</p>
               </Link>
             </div>
 
-            <div className="my-4 flex items-start space-x-6">
+            <div className="my-4 flex flex-col gap-6 lg:flex-row items-start">
               {courses.slice(0, 3).map((course) => (
-                <div key={course._id} className="w-1/3">
+                <div key={course._id} className="w-full lg:w-1/3">
                   <img
                     src={course.thumbnail}
                     alt={course.courseName}

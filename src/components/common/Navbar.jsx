@@ -22,6 +22,7 @@ function Navbar() {
 
   const [subLinks, setSubLinks] = useState([])
   const [loading, setLoading] = useState(false)
+   const [menuOpen, setMenuOpen] = useState(false) 
 
   useEffect(() => {
     ;(async () => {
@@ -143,13 +144,45 @@ function Navbar() {
           )}
           {token !== null && <ProfileDropdown />}
         </div>
-        <button className="mr-4 md:hidden">
+
+        <button className="mr-4 md:hidden"
+        onClick={() => setMenuOpen(true)}>
           <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
         </button>
       </div>
+      
+      {menuOpen && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm md:hidden">
+          <div className="relative w-[90%] max-w-sm rounded-lg bg-richblack-800 text-white p-6 space-y-6">
+            {/* Close Button */}
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="absolute top-3 right-4 text-2xl text-richblack-25"
+            >
+              ✕
+            </button>
+
+            <nav className="flex flex-col gap-4 text-lg">
+              {token === null ? (
+                <>
+                  <Link to="/login" onClick={() => setMenuOpen(false)}>Login</Link>
+                  <Link to="/signup" onClick={() => setMenuOpen(false)}>Signup</Link>
+                </>
+              ) : (
+                <Link to="/dashboard/my-profile" onClick={() => setMenuOpen(false)}>Dashboard</Link>
+              )}
+              <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+              <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
+              <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+              {/* <Link to="/catalog/:catalogName" onClick={() => setMenuOpen(false)}>Catalog</Link> */}
+            </nav>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
 
 
 export default Navbar
+

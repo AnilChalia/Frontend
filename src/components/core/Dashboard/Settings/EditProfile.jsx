@@ -31,12 +31,12 @@ export default function EditProfile() {
     <>
       <form onSubmit={handleSubmit(submitProfileForm)}>
         {/* Profile Information */}
-        <div className="my-10 flex flex-col gap-y-6 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12">
+        <div className="my-10 flex flex-col gap-y-6 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-4 sm:p-6 md:p-8 md:px-12">
           <h2 className="text-lg font-semibold text-richblack-5">
             Profile Information
           </h2>
-          <div className="flex flex-col gap-5 lg:flex-row">
-            <div className="flex flex-col gap-2 lg:w-[48%]">
+          <div className="flex flex-col sm:flex-col lg:flex-row gap-5 sm:gap-y-5">
+            <div className="flex flex-col gap-2 w-full lg:w-[48%]">
               <label htmlFor="firstName" className="lable-style">
                 First Name
               </label>
@@ -76,8 +76,8 @@ export default function EditProfile() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-5 lg:flex-row">
-            <div className="flex flex-col gap-2 lg:w-[48%]">
+          <div className="flex flex-col sm:flex-col lg:flex-row gap-5 sm:gap-y-5">
+            <div className="flex flex-col gap-2 w-full lg:w-[48%]">
               <label htmlFor="dateOfBirth" className="lable-style">
                 Date of Birth
               </label>
@@ -132,8 +132,8 @@ export default function EditProfile() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-5 lg:flex-row">
-            <div className="flex flex-col gap-2 lg:w-[48%]">
+          <div className="flex flex-col sm:flex-col lg:flex-row gap-5 sm:gap-y-5">
+            <div className="flex flex-col gap-2 w-full lg:w-[48%]">
               <label htmlFor="contactNumber" className="lable-style">
                 Contact Number
               </label>
@@ -159,7 +159,7 @@ export default function EditProfile() {
                 </span>
               )}
             </div>
-            <div className="flex flex-col gap-2 lg:w-[48%]">
+            <div className="flex flex-col gap-2 w-full lg:w-[48%]">
               <label htmlFor="about" className="lable-style">
                 About
               </label>
@@ -181,7 +181,7 @@ export default function EditProfile() {
           </div>
         </div>
 
-        <div className="flex justify-end gap-2">
+        <div className="flex flex-col sm:flex-row justify-end gap-2 sm:gap-2 w-full ">
           <button
             onClick={() => {
               navigate("/dashboard/my-profile")
@@ -190,7 +190,7 @@ export default function EditProfile() {
           >
             Cancel
           </button>
-          <IconBtn type="submit" text="Save" />
+          <IconBtn type="submit" text="Save" customClasses="w-full sm:w-auto justify-center"/>
         </div>
       </form>
     </>

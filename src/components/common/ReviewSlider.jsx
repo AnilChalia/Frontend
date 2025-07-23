@@ -36,8 +36,8 @@ function ReviewSlider() {
   // console.log(reviews)
 
   return (
-    <div className="text-white">
-      <div className="my-[50px] h-[184px] max-w-maxContentTab lg:max-w-maxContent">
+    <div className="text-white px-2 sm:px-6 text-sm sm:text-base">
+      <div className="my-[50px] h-[184px] max-w-[95%] sm:max-w-maxContentTab lg:max-w-maxContent mx-auto">
         <Swiper
           slidesPerView={4}
           spaceBetween={25}
@@ -46,6 +46,28 @@ function ReviewSlider() {
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
+          }}
+            breakpoints={{
+            640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+            0: {
+            slidesPerView: 1, 
+            spaceBetween: 10,
+          },
+           640: {
+           slidesPerView: 2,
+           spaceBetween: 15,
+          },
+          768: {
+          slidesPerView: 3, 
+          spaceBetween: 20,
+          },
+          1024: {
+          slidesPerView: 4,
+          spaceBetween: 25,
+          },
           }}
           modules={[FreeMode, Pagination, Autoplay]}
           className="w-full "
@@ -71,6 +93,7 @@ function ReviewSlider() {
                       </h2>
                     </div>
                   </div>
+
                   <p className="font-medium text-richblack-25">
                     {review?.review.split(" ").length > truncateWords
                       ? `${review?.review
