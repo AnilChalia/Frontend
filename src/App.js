@@ -30,6 +30,9 @@ import ViewCourse from "./pages/ViewCourse";
 import VideoDetails from "./components/core/ViewCourse/VideoDetails";
 import Instructor from "./components/core/Dashboard/InstructorDashboard/Instructor"
 import { getUserDetails } from "./services/operations/profileAPI";
+import PurchaseHistory from "./components/core/Dashboard/PurchaseHistory";
+
+
 
 function App() {
 
@@ -124,6 +127,7 @@ function App() {
           <>
           <Route path="dashboard/cart" element={<Cart />} />
           <Route path="dashboard/enrolled-courses" element={<EnrolledCourses />} />
+          <Route path="/dashboard/purchase-history" element={<PurchaseHistory />} />
           </>
         )
       }

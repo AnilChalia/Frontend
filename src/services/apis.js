@@ -23,6 +23,15 @@ export const studentEndpoints = {
   SEND_PAYMENT_SUCCESS_EMAIL_API: BASE_URL + "/payment/sendPaymentSuccessEmail",
 }
 
+// purchase endpoints 
+// src/apis.js
+export const purchaseEndpoints = {
+  SAVE_PURCHASE_API: BASE_URL + "/purchase/PaymentsavePurchase",
+  PURCHASE_HISTORY_API: BASE_URL + "/purchase/Paymenthistory",
+}
+
+
+
 // COURSE ENDPOINTS
 export const courseEndpoints = {
   GET_ALL_COURSE_API: BASE_URL + "/course/getAllCourses",

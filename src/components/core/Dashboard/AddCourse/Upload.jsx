@@ -65,7 +65,7 @@ export default function Upload({
       <div
         className={`${
           isDragActive ? "bg-richblack-600" : "bg-richblack-700"
-        }flex ${!previewSource ? "min-h-[250px]" : ""} cursor-pointer items-center justify-center rounded-md border-2 border-dotted border-richblack-500`}
+        } flex ${!previewSource ? "min-h-[250px]" : ""} cursor-pointer items-center justify-center rounded-md border-2 border-dotted border-richblack-500`}
       >
         {previewSource ? (
           <div className="flex w-full flex-col p-6">
@@ -105,7 +105,7 @@ export default function Upload({
             className="flex w-full flex-col items-center p-6"
             {...getRootProps()}
           >
-            <input {...getInputProps()} ref={inputRef} />
+            <input {...getInputProps()} ref={inputRef} className="hidden" />
             <div className="grid aspect-square w-14 place-items-center rounded-full bg-pure-greys-800">
               <FiUploadCloud className="text-2xl text-yellow-50" />
             </div>

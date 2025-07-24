@@ -18,22 +18,22 @@ export default function MyProfile() {
       </h1>
        <div className="flex flex-col sm:flex-row md:flex-row gap-6 sm:items-center sm:justify-between md:items-center md:justify-between rounded-md border border-richblack-700 bg-richblack-800 p-6 sm:p-8 sm:px-12 md:gap-8 md:px-16">
        {/* Left Section */}
+       
         <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-x-4 md:flex-row md:items-center md:gap-x-6">
         <img
         src={user?.image}
         alt={`profile-${user?.firstName}`}
-        className="aspect-square w-[78px] rounded-full object-cover"
+        className="w-[70px] sm:w-[60px] md:w-[120px] aspect-square rounded-full object-cover"
        />
        
       <div className="space-y-1 text-left sm:text-center  md:text-left w-full">
-         <p className="text-base sm:text-lg md:text-xl font-semibold text-richblack-5 break-words">
+         <p className="text-base sm:text-lg md:text-xl font-semibold text-richblack-5 sm:text-sm sm:text-left break-words">
            {user?.firstName + " " + user?.lastName}
         </p>
         <p className="text-xs sm:text-sm md:text-base text-richblack-300 break-words">
           {user?.email}
         </p>
       </div>
-
       </div>
        {/* Edit Button */}
       <div className="self-start sm:self-auto md:self-center">
