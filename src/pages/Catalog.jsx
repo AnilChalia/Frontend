@@ -32,7 +32,9 @@ const Catalog = () => {
         const getCategoryDetails = async() => {
             try{
                 const res = await getCatalogaPageData(categoryId);
+                
                 console.log("PRinting res: ", res);
+
                 setCatalogPageData(res);
             }
             catch(error) {
@@ -119,7 +121,6 @@ const Catalog = () => {
               />
             </div>
           </div>
-    
           {/* Section 3 */}
           <div className=" mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
             <div className="section_heading">Frequently Bought</div>

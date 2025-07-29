@@ -77,15 +77,18 @@ export default function EditProfile() {
           </div>
 
           <div className="flex flex-col sm:flex-col lg:flex-row gap-5 sm:gap-y-5">
+            
             <div className="flex flex-col gap-2 w-full lg:w-[48%]">
-              <label htmlFor="dateOfBirth" className="lable-style">
+              <label htmlFor="dateOfBirth" className="lable-style ">
                 Date of Birth
               </label>
               <input
                 type="date"
                 name="dateOfBirth"
                 id="dateOfBirth"
-                className="form-style"
+                className="w-full rounded-md bg-richblack-700 text-richblack-50 
+                          font-semibold px-4 py-2 text-sm sm:text-left sm:px-5 sm:text-base 
+                          appearance-none sm:appearance-auto focus:outline-none focus:ring-2 focus:ring-yellow-50"
                 {...register("dateOfBirth", {
                   required: {
                     value: true,
@@ -104,6 +107,7 @@ export default function EditProfile() {
                 </span>
               )}
             </div>
+
             <div className="flex flex-col gap-2 lg:w-[48%]">
               <label htmlFor="gender" className="lable-style">
                 Gender

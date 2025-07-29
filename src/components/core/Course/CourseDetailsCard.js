@@ -26,11 +26,13 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
   }
 
   const handleAddToCart = () => {
+    console.log("Clicked Add to Cart");
     if (user && user?.accountType === ACCOUNT_TYPE.INSTRUCTOR) {
       toast.error("You are an Instructor. You can't buy a course.")
       return
     }
     if (token) {
+      console.log("Dispatching course:", course)
       dispatch(addToCart(course))
       return
     }
@@ -62,6 +64,7 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
           <div className="space-x-3 pb-4 text-3xl font-semibold">
             Rs. {CurrentPrice}
           </div>
+
           <div className="flex flex-col gap-4">
             <button
               className="yellowButton"
@@ -76,11 +79,12 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
                 : "Buy Now"}
             </button>
             {(!user || !course?.studentsEnrolled.includes(user?._id)) && (
-              <button onClick={handleAddToCart} className="blackButton">
+              <button onClick={handleAddToCart} className="blackButton relative z-[9999]">
                 Add to Cart
               </button>
             )}
           </div>
+
           <div>
             <p className="pb-3 pt-6 text-center text-sm text-richblack-25">
               30-Day Money-Back Guarantee
@@ -117,3 +121,4 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
 }
 
 export default CourseDetailsCard
+

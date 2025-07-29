@@ -11,7 +11,7 @@ export default function MyProfile() {
 
   return (
     <>
-      <h1 className="mb-6 text-xl text-left font-medium text-richblack-5 
+      <h1 className="mb-6 text-xl text-left font-medium font-bold text-richblack-50 
                sm:mb-10 sm:text-2xl sm:text-center 
                md:mb-14 md:text-3xl">
         My Profile

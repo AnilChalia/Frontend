@@ -67,7 +67,7 @@ const ContactUsForm = () => {
             </span>
           )}
         </div>
-        <div className="flex flex-col gap-2 lg:w-[48%]">
+        <div className="flex flex-col gap-2 lg:w-[50%]">
           <label htmlFor="lastname" className="lable-style">
             Last Name
           </label>
@@ -106,8 +106,8 @@ const ContactUsForm = () => {
           Phone Number
         </label>
 
-        <div className="flex gap-5">
-          <div className="flex w-[81px] flex-col gap-2">
+        <div className="flex gap-5">    
+          <div className="flex w-[81px]  flex-col gap-2">
             <select
               type="text"
               name="firstname"
@@ -125,7 +125,8 @@ const ContactUsForm = () => {
               })}
             </select>
           </div>
-          <div className="flex w-[calc(100%-90px)] flex-col gap-2">
+
+          <div className="flex w-[calc(100%-100px)] flex-col gap-2">
             <input
               type="number"
               name="phonenumber"
@@ -143,6 +144,7 @@ const ContactUsForm = () => {
             />
           </div>
         </div>
+
         {errors.phoneNo && (
           <span className="-mt-1 text-[12px] text-yellow-100">
             {errors.phoneNo.message}

@@ -2,7 +2,7 @@ import { apiConnector } from "../apiconnector"
 import { purchaseEndpoints } from "../apis"
 
 const { SAVE_PURCHASE_API, PURCHASE_HISTORY_API } = purchaseEndpoints
-console.log("save history url is ->",SAVE_PURCHASE_API);
+
 
 export const savePurchaseDetails = async (data, token) => {
   let result = null

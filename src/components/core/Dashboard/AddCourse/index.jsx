@@ -9,7 +9,7 @@ export default function AddCourse() {
             Add Course
           </h1>
 
-          <div className="flex-1 overflow-x-hidden min-h-[600px]">
+          <div className="flex-1 overflow-x-hidden min-h-[600px] sm:flex sm:flex-col">
             <RenderSteps />
           </div>
         </div>

@@ -33,24 +33,25 @@ export default function UpdatePassword() {
     <>
       <form onSubmit={handleSubmit(submitPasswordForm)}>
         <div className="my-10 flex flex-col gap-y-6 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12">
-          <h2 className="text-lg font-semibold text-richblack-5 sm:text-[5px]">Password</h2>
+          <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-richblack-5">Password</h2>
           <div className="flex flex-col gap-5 lg:flex-row">
             
             <div className="relative flex flex-col gap-2 w-full sm:w-1/2">
-              <label htmlFor="oldPassword" className="lable-style sm:text-sm break-words">
+              <label htmlFor="oldPassword" className="lable-style sm:text-sm break-words ">
                 Current Password
               </label>
               <input
                 type={showOldPassword ? "text" : "password"}
                 name="oldPassword"
                 id="oldPassword"
-                placeholder="Enter Current Password"
+                placeholder="Enter Password"
                 className="form-style"
                 {...register("oldPassword", { required: true })}
               />
+
               <span
                 onClick={() => setShowOldPassword((prev) => !prev)}
-                className="absolute right-3 top-[38px] z-[10] cursor-pointer"
+                className="absolute right-1 top-[42px] z-[10] cursor-pointer"
               >
                 {showOldPassword ? (
                   <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
@@ -58,6 +59,7 @@ export default function UpdatePassword() {
                   <AiOutlineEye fontSize={24} fill="#AFB2BF" />
                 )}
               </span>
+
               {errors.oldPassword && (
                 <span className="-mt-1 text-[12px] text-yellow-100">
                   Please enter your Current Password.
@@ -74,12 +76,12 @@ export default function UpdatePassword() {
                 name="newPassword"
                 id="newPassword"
                 placeholder="Enter New Password"
-                className="form-style"
+                className="form-style "
                 {...register("newPassword", { required: true })}
               />
               <span
                 onClick={() => setShowNewPassword((prev) => !prev)}
-                className="absolute right-3 top-[38px] z-[10] cursor-pointer"
+                className="absolute right-1 top-[42px] z-[10] cursor-pointer"
               >
                 {showNewPassword ? (
                   <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />

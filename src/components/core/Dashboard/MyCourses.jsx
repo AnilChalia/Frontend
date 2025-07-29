@@ -32,6 +32,7 @@ export default function MyCourses() {
         <h1 className="text-3xl font-medium text-richblack-5 max-sm:text-xl">My Courses</h1>
         <IconBtn
           text="Add Course"
+          className="w-full h-10 text-sm sm:w-auto sm:h-12 sm:text-xl"
           onclick={() => navigate("/dashboard/add-course")}
         >
           <VscAdd />

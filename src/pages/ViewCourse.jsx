@@ -29,16 +29,23 @@ export default function ViewCourse() {
 
   return (
     <>
-      <div className="relative flex  min-h-[calc(100vh-3.5rem)]">
-        <VideoDetailsSidebar setReviewModal={setReviewModal} />
-        <div className="h-[calc(100vh-3.5rem)] flex-1 overflow-auto">
-          <div className="mx-6">
+      <div className="flex flex-col md:flex-row h-[calc(100vh-3.5rem)]">
+        {/* Sidebar - Fixed width on md+, full on mobile */}
+        <div className="md:w-[300px] w-full md:min-w-[280px] shrink-0 border-r border-richblack-700 bg-richblack-800">
+          <VideoDetailsSidebar setReviewModal={setReviewModal} />
+        </div>
+
+        {/* Content area */}
+        <div className="flex-1 overflow-y-auto bg-richblack-900">
+          <div className="p-4 md:p-6">
             <Outlet />
           </div>
         </div>
       </div>
+
       {reviewModal && <CourseReviewModal setReviewModal={setReviewModal} />}
     </>
 
   )
 }
+

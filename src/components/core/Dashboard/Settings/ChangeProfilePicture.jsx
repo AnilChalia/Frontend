@@ -76,8 +76,13 @@ export default function ChangeProfilePicture() {
             <button
               onClick={handleClick}
               disabled={loading}
-              className="cursor-pointer rounded-md bg-richblack-700 py-2 px-5 font-semibold text-richblack-50"
-            >
+              className="cursor-pointer rounded-md bg-richblack-700 
+                        text-richblack-50 font-semibold 
+                        px-4 py-2 text-sm 
+                        sm:px-5 sm:py-2 sm:text-base 
+                        md:px-6 md:text-base 
+                        w-full sm:w-auto"
+              >
               Select
             </button>
             <IconBtn

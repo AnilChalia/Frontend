@@ -61,22 +61,19 @@ export async function buyCourse(token, courses, userDetails, navigate, dispatch)
                 email:userDetails.email
             },
             handler: function(response) {
-                console.log("✅ Payment handler called");
-                console.log("📦 Razorpay response:", response);
                 //send successful wala mail
                 sendPaymentSuccessEmail(response, orderResponse.data.message.amount,token );
                 
+                
                 //save purchase details
-                console.log("save purchase history"); 
                 savePurchaseDetails({
-                   courses: courses.map((course) => course._id), 
+                   courses: courses.map((course) => course), 
                    price: orderResponse.data.message.amount / 100, 
                    paymentMode: "Razorpay",
                    paymentId: response.razorpay_payment_id,
                 }, token);
-                console.log("✅ API Call Done");
 
-                console.log("verify paymet");
+
                 //verifyPayment
                 verifyPayment({...response, courses}, token, navigate, dispatch);
             }

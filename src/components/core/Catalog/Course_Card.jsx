@@ -4,8 +4,7 @@ import GetAvgRating from '../../../utils/avgRating';
 import { Link } from 'react-router-dom';
 
 const Course_Card = ({course, Height}) => {
-  console.log("Course ->",course);
-
+  
 
     const [avgReviewCount, setAvgReviewCount] = useState(0);
 
@@ -19,12 +18,13 @@ const Course_Card = ({course, Height}) => {
   return (
     <>
       <Link to={`/courses/${course._id}`}>
-        <div className="">
+          <div className="">
           <div className="rounded-lg">
             <img
               src={course?.thumbnail}
               alt="course thumnail"
-              className={`${Height} w-full rounded-xl object-cover `}
+              className={`${Height}w-full rounded-xl object-cover
+              h-[160px] sm:h-[250px] md:h-[240px]`}
             />
           </div>
           <div className="flex flex-col gap-2 px-1 py-3">
@@ -43,7 +43,7 @@ const Course_Card = ({course, Height}) => {
             <p className='text-sm text-yellow-200'>{course?.status}</p>
             
           </div>
-        </div>
+        </div> 
       </Link>
     </>
   )

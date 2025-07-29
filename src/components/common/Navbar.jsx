@@ -14,6 +14,7 @@ import { ACCOUNT_TYPE } from '../../utils/constants'
 import { BsChevronDown } from "react-icons/bs"
 
 
+
 function Navbar() {
   const { token } = useSelector((state) => state.auth)
   const { user } = useSelector((state) => state.profile)
@@ -54,6 +55,7 @@ function Navbar() {
         <Link to="/">
           <img src={logo} alt="Logo" width={160} height={32} loading="lazy" />
         </Link>
+
         {/* Navigation links */}
         <nav className="hidden md:block">
           <ul className="flex gap-x-6 text-richblack-25">
@@ -76,11 +78,7 @@ function Navbar() {
                           <p className="text-center">Loading...</p>
                         ) : subLinks.length ? (
                           <>
-                            {subLinks
-                              ?.filter(
-                                (subLink) => subLink?.courses?.length > 0
-                              )
-                              ?.map((subLink, i) => (
+                            {subLinks.map((subLink, i) => (
                                 <Link
                                   to={`/catalog/${subLink.name
                                     .split(" ")
@@ -116,6 +114,7 @@ function Navbar() {
             ))}
           </ul>
         </nav>
+
         {/* Login / Signup / Dashboard */}
         <div className="hidden items-center gap-x-4 md:flex">
           {user && user?.accountType !== ACCOUNT_TYPE.INSTRUCTOR && (
@@ -174,7 +173,29 @@ function Navbar() {
               <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
               <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
               <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
-              {/* <Link to="/catalog/:catalogName" onClick={() => setMenuOpen(false)}>Catalog</Link> */}
+
+              {/*catalog dropdown  */}
+              {subLinks.length > 0 ? (
+                  <div>
+                    <p className="">Catalog</p>
+                     <div className="ml-2 flex flex-col gap-1 text-sm p-1 items-right text-base">
+                      {subLinks.map((subLink, i) => (
+                       <Link
+                         key={i}
+                         to={`/catalog/${subLink.name
+                           .split(" ")
+                           .join("-")
+                           .toLowerCase()}`}
+                          onClick={() => setMenuOpen(false)}
+                        >
+                         {subLink.name}
+                         </Link>
+                       ))}
+                     </div>
+                   </div>
+              ) : (
+                <p>No Categories Found</p>
+              )}
             </nav>
           </div>
         </div>
@@ -185,4 +206,5 @@ function Navbar() {
 
 
 export default Navbar
+
 
