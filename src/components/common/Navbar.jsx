@@ -23,7 +23,9 @@ function Navbar() {
 
   const [subLinks, setSubLinks] = useState([])
   const [loading, setLoading] = useState(false)
-   const [menuOpen, setMenuOpen] = useState(false) 
+  const [menuOpen, setMenuOpen] = useState(false) 
+  const [mobileCatalogOpen, setMobileCatalogOpen] = useState(false)
+
 
   useEffect(() => {
     ;(async () => {
@@ -173,29 +175,35 @@ function Navbar() {
               <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
               <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
               <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
-
-              {/*catalog dropdown  */}
-              {subLinks.length > 0 ? (
-                  <div>
-                    <p className="">Catalog</p>
-                     <div className="ml-2 flex flex-col gap-1 text-sm p-1 items-right text-base">
-                      {subLinks.map((subLink, i) => (
-                       <Link
-                         key={i}
-                         to={`/catalog/${subLink.name
-                           .split(" ")
-                           .join("-")
-                           .toLowerCase()}`}
-                          onClick={() => setMenuOpen(false)}
-                        >
-                         {subLink.name}
-                         </Link>
-                       ))}
-                     </div>
-                   </div>
-              ) : (
-                <p>No Categories Found</p>
-              )}
+             <div>
+              <div
+               className="flex items-center justify-between cursor-pointer"
+               onClick={() => setMobileCatalogOpen(!mobileCatalogOpen)}
+               >
+              <p>Catalog</p>
+              <IoIosArrowDropdownCircle
+              className={`text-xl transition-transform ${mobileCatalogOpen ? "rotate-180" : "rotate-0"}`}
+              />
+             </div>
+             {mobileCatalogOpen && subLinks.length > 0 ? (
+              <div className="ml-4 mt-2 flex flex-col gap-1 text-sm text-base">
+              {subLinks.map((subLink, i) => (
+              <Link
+              key={i}
+              to={`/catalog/${subLink.name.split(" ").join("-").toLowerCase()}`}
+              onClick={() => {
+              setMenuOpen(false)
+              setMobileCatalogOpen(false)
+             }}
+            >
+             {subLink.name}
+            </Link>
+            ))}
+          </div>
+          ) : mobileCatalogOpen && subLinks.length === 0 ? (
+          <p className="ml-4 mt-2 text-sm text-red-400">No Categories Found</p>
+            ) : null}
+           </div>
             </nav>
           </div>
         </div>

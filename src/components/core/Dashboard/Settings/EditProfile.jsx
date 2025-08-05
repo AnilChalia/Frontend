@@ -86,7 +86,7 @@ export default function EditProfile() {
                 type="date"
                 name="dateOfBirth"
                 id="dateOfBirth"
-                className="w-full rounded-md bg-richblack-700 text-richblack-50 
+                className="w-full rounded-md  bg-richblack-700 text-richblack-50 
                           font-semibold px-4 py-2 text-sm sm:text-left sm:px-5 sm:text-base 
                           appearance-none sm:appearance-auto focus:outline-none focus:ring-2 focus:ring-yellow-50"
                 {...register("dateOfBirth", {

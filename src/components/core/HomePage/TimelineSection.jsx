@@ -31,10 +31,10 @@ const timeline = [
 
 const TimelineSection = () => {
   return (
-    <div>
-      <div className='flex flex-row gap-15 items-center'>
+    <div className="px-4 py-10">
+      <div className='flex flex-col sm:flex-row gap-10 items-center'>
 
-        <div className='w-[45%] flex flex-col gap-5'>
+        <div className='w-full sm:w-[45%] flex flex-col gap-5'>
             {
                 timeline.map( (element, index) => {
                     return (
@@ -54,17 +54,18 @@ const TimelineSection = () => {
                 } )
             }
         </div>
-        <div className='relative shadow-blue-200'>
+        <div className='relative shadow-blue-200 w-full sm:w-auto'>
 
             <img  src={timelineImage}
             alt="timelineImage"
-            className='shadow-white object-cover h-fit'
+            className='shadow-white object-cover h-fit w-full sm:w-auto'
             />
 
             <div className='absolute bg-caribbeangreen-700 text-white uppercase py-7 
-                           left-[50%] translate-x-[-50%] translate-y-[-50%]
-                           flex flex-col sm:flex-row gap-4 sm:gap-0 sm:justify-center items-center sm:items-start
-                           w-[90%] sm:w-auto text-center sm:text-left'>
+                         left-[50%] translate-x-[-50%] translate-y-[-50%]
+                         flex flex-col sm:flex-row gap-4 sm:gap-0 sm:justify-center items-center sm:items-start
+                         w-[90%] sm:w-auto text-center sm:text-left
+                         h-[60%] sm:h-auto'>
                 <div className='flex flex-row gap-5 items-center border-r border-caribbeangreen-300 px-7'>
                     <p className='text-3xl font-bold'>10</p>
                     <p className='text-caribbeangreen-300 text-sm'>Years of Experience</p>
@@ -74,14 +75,12 @@ const TimelineSection = () => {
                 <p className='text-3xl font-bold'>250</p>
                     <p className='text-caribbeangreen-300 text-sm'>TYpe of Courses</p>
                 </div>
-
             </div>
-
         </div>
-
       </div>
     </div>
   )
 }
 
 export default TimelineSection
+

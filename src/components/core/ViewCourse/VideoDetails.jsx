@@ -173,6 +173,7 @@ const VideoDetails = () => {
           src={previewSource}
           alt="Preview"
           className="h-full w-full rounded-md object-cover"
+          // h-full w-full rounded-md object-cover
         />
       ) : (
         <Player

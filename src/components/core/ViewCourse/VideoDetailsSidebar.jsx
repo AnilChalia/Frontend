@@ -36,16 +36,15 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
       setActiveStatus(courseSectionData?.[currentSectionIndx]?._id)
       setVideoBarActive(activeSubSectionId)
     })()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [courseSectionData, courseEntireData, location.pathname])
 
   return (
     <>
-      {/* Mobile Toggle Button */}
-      <div className="fixed top-1/2 left-2 transform -translate-y-1/2 z-50 sm:hidden">
+      {/* Mobile Toggle Button (only small screens) */}
+      <div className="fixed z-50 left-2 top-1/2 -translate-y-1/2 sm:hidden">
         <button
           onClick={() => setIsMobileSidebarOpen(true)}
-          className="w-10 h-10 flex items-center justify-center rounded-full bg-richblack-700 text-white shadow-lg backdrop-blur-sm"
+          className="w-10 h-10 flex items-center justify-center rounded-full bg-richblack-700 text-white shadow-lg backdrop-blur-sm  bg-white/10 text-white shadow-lg backdrop-blur-md border border-white/20"
         >
           ☰
         </button>
@@ -54,11 +53,11 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
       {/* Sidebar Container */}
       <div
         className={`
-          fixed top-0 left-0 z-40 
+          fixed top-[60px] left-0 z-40 
           ${isMobileSidebarOpen ? "translate-x-0" : "-translate-x-full"}
           transition-transform duration-300
           sm:translate-x-0
-          flex h-[100vh] w-3/4 sm:w-1/3 min-w-[200px] max-w-[350px] flex-col
+          flex h-[calc(100vh-60px)] w-3/4 sm:w-[300px] flex-col
           border-r-[1px] border-r-richblack-700 bg-richblack-800 text-sm
           px-2 sm:text-base sm:px-5
         `}
@@ -76,17 +75,15 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
         <div className="mx-5 flex flex-col items-start justify-between gap-2 gap-y-4 border-b border-richblack-600 py-5 text-lg font-bold text-richblack-25">
           <div className="flex w-full items-center justify-between">
             <div
-              onClick={() => {
-                navigate(`/dashboard/enrolled-courses`)
-              }}
-              className="flex h-[35px] w-[35px] sm:pr-3 items-center justify-center rounded-full bg-richblack-100 p-1 text-richblack-700 hover:scale-90"
+              onClick={() => navigate(`/dashboard/enrolled-courses`)}
+              className="flex h-[28px] w-[28px] sm:h-[35px] sm:w-[35px] sm:pr-3 items-center justify-center rounded-full bg-richblack-100 p-1 text-richblack-700 hover:scale-90"
               title="back"
             >
-              <IoIosArrowBack size={30} />
+              <IoIosArrowBack size={20} className="sm:size-7" />
             </div>
             <IconBtn
               text="Add Review"
-              customClasses="ml-auto sm:ml-0 text-[11px] sm:text-sm leading-tight px-2 sm:px-4 py-[4px] sm:py-2 min-h-[20px] sm:min-h-0 w-[90px] sm:w-fit"
+              customClasses="ml-auto sm:ml-0 text-[10px] sm:text-sm leading-tight px-2 sm:px-4 py-[3px] sm:py-2 min-h-[20px] sm:min-h-0 w-[80px] sm:w-fit"
               onclick={() => setReviewModal(true)}
             />
           </div>
@@ -99,7 +96,7 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
           </div>
         </div>
 
-        <div className="h-[calc(100vh - 5rem)] overflow-y-auto">
+        <div className="h-[calc(100vh-60px-6rem)] overflow-y-auto">
           {courseSectionData.map((course, index) => (
             <div
               className="mt-2 cursor-pointer text-sm text-richblack-5"
@@ -113,8 +110,8 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
                 </div>
                 <div className="flex items-center gap-3">
                   <span
-                    className={`${
-                      activeStatus === course?.sectionName
+                    className={`$ {
+                      activeStatus === course?._id
                         ? "rotate-0"
                         : "rotate-180"
                     } transition-all duration-500`}
@@ -129,18 +126,18 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
                 <div className="transition-[height] duration-500 ease-in-out">
                   {course.subSection.map((topic, i) => (
                     <div
-                      className={`flex gap-3  px-5 py-2 ${
+                      className={`flex gap-3 px-5 py-2 $ {
                         videoBarActive === topic._id
                           ? "bg-yellow-200 font-semibold text-richblack-800"
                           : "hover:bg-richblack-900"
-                      } `}
+                      }`}
                       key={i}
                       onClick={() => {
                         navigate(
                           `/view-course/${courseEntireData?._id}/section/${course?._id}/sub-section/${topic?._id}`
                         )
                         setVideoBarActive(topic._id)
-                        setIsMobileSidebarOpen(false) // auto-close on mobile
+                        setIsMobileSidebarOpen(false)
                       }}
                     >
                       <input
@@ -148,7 +145,7 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
                         checked={completedLectures.includes(topic?._id)}
                         onChange={() => {}}
                       />
-                      {topic.title}
+                      <span>{topic.title}</span>
                     </div>
                   ))}
                 </div>

@@ -16,27 +16,24 @@ export default function MyProfile() {
                md:mb-14 md:text-3xl">
         My Profile
       </h1>
-       <div className="flex flex-col sm:flex-row md:flex-row gap-6 sm:items-center sm:justify-between md:items-center md:justify-between rounded-md border border-richblack-700 bg-richblack-800 p-6 sm:p-8 sm:px-12 md:gap-8 md:px-16">
-       {/* Left Section */}
-       
+      
+        <div className="flex flex-col sm:flex-row md:flex-row gap-6 sm:items-center sm:justify-between  md:items-center md:justify-between rounded-md border border-richblack-700 bg-richblack-800 p-6 sm:p-8 sm:px-12 md:gap-6 md:px-15">
         <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-x-4 md:flex-row md:items-center md:gap-x-6">
         <img
         src={user?.image}
         alt={`profile-${user?.firstName}`}
-        className="w-[70px] sm:w-[60px] md:w-[120px] aspect-square rounded-full object-cover"
+        className="h-[100px] w-[100px] sm:w-[80px] md:h-[80px] md:w-[80px] md:items-start lg:w-[120px] aspect-square rounded-full object-cover"
        />
-       
-      <div className="space-y-1 text-left sm:text-center  md:text-left w-full">
-         <p className="text-base sm:text-lg md:text-xl font-semibold text-richblack-5 sm:text-sm sm:text-left break-words">
+      <div className="w-full space-y-2 text-left sm:text-center md:text-left py-4">
+         <p className="text-base text-lg sm:text-lg md:text-xl font-semibold text-richblack-5 sm:text-sm sm:text-left break-words">
            {user?.firstName + " " + user?.lastName}
         </p>
-        <p className="text-xs sm:text-sm md:text-base text-richblack-300 break-words">
+        <p className="text-xs sm:text-sm md:text-[15px] text-richblack-300 break-words">
           {user?.email}
         </p>
       </div>
       </div>
-       {/* Edit Button */}
-      <div className="self-start sm:self-auto md:self-center">
+      <div className="sm:self-auto md:self-center">
        <IconBtn
          text="Edit"
          onclick={() => navigate("/dashboard/settings")}
@@ -45,6 +42,7 @@ export default function MyProfile() {
         </IconBtn>
       </div>
      </div>
+
 
       {/* About Section */}
       <div className="my-8 sm:my-10 flex flex-col gap-y-6 sm:gap-y-10 rounded-md border border-richblack-700 bg-richblack-800 p-6 sm:p-8 sm:px-12">
@@ -131,3 +129,10 @@ export default function MyProfile() {
     </>
   )
 }
+
+
+
+
+
+
+

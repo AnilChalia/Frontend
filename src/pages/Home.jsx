@@ -2,7 +2,7 @@ import React from 'react'
 import {FaArrowRight} from "react-icons/fa"
 import {Link} from "react-router-dom"
 import HighlightText from '../components/core/HomePage/HighlightText'
-
+import { motion } from "framer-motion";
 import CTAButton from "../components/core/HomePage/Button"
 import Banner from "../assets/Images/banner.mp4"
 import CodeBlocks from "../components/core/HomePage/CodeBlocks"
@@ -24,7 +24,7 @@ const Home = () => {
 
         <Link to={"/signup"}>
             <div className=' group mt-16 p-1 mx-auto rounded-full bg-richblack-800 font-bold text-richblack-200 drop-shadow-[0_1.5px_rgba(255,255,255,0.25)] transition-all duration-200 hover:scale-95 w-fit'>
-                <div className='flex flex-row items-center gap-2 rounded-full px-10 py-[5px] transition-all duration-200 group-hover:bg-richblack-900'>
+                <div className='flex flex-row items-center gap-2 rounded-full px-10 py-[5px] transition-all duration-200 group-hover:bg-richblack-800'>
                     <p>Become an Instructor</p>
                     <FaArrowRight />
                 </div>
@@ -51,9 +51,10 @@ const Home = () => {
             </CTAButton>
         </div>
 
-        <div className='mx-3  my-7 shadow-[10px_-5px_50px_-5px] shadow-blue-200'>
+        <div className='mx-3  my-7 shadow-[10px_-5px_50px_-5px] shadow-blue-200 '>
             <video
-            className='shadow-[20px_20px_rgba(255,255,255)]'
+            
+            className='shadow-[20px_20px_rgba(255,255,255)] '
             muted
             loop
             autoPlay
@@ -63,7 +64,13 @@ const Home = () => {
         </div>
 
         {/* Code Section 1 */}
-        <div>
+        <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        >
+        <div className="transition-all duration-500 hover:scale-105 hover:shadow-2xl">
             <CodeBlocks 
                 position={"lg:flex-row"}
                 heading={
@@ -96,9 +103,16 @@ const Home = () => {
                 backgroundGradient={<div className="codeblock1 absolute"></div>}
               />
         </div>
-
+       </motion.div>
                 {/* Code Section 2 */}
-        <div>
+
+        <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        >
+        <div className="transition-all duration-500 hover:scale-105 hover:shadow-2xl">
             <CodeBlocks 
                 position={"lg:flex-row-reverse"}
                 heading={
@@ -130,7 +144,7 @@ const Home = () => {
                   backgroundGradient={<div className="codeblock2 absolute"></div>}
             />
         </div>
-
+       </motion.div>
             <ExploreMore />
       </div>
 

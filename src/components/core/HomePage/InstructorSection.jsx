@@ -9,7 +9,7 @@ const InstructorSection = () => {
     <div className='mt-16 px-4 sm:px-6 md:px-10'>
       <div className='flex flex-col-reverse lg:flex-row gap-10 lg:gap-20 items-center'>
 
-        <div className='w-full lg:w-[50%] flex flex-col gap-6 sm:gap-8'>
+        <div className='w-full lg:w-[50%] flex flex-col gap-6 sm:gap-8 md:items-center'>
             <div className='text-3xl sm:text-4xl font-semibold'>
                 Become an
                 <HighlightText text={"Instructor"} />
@@ -19,7 +19,7 @@ const InstructorSection = () => {
             Instructors from around the world teach millions of students on StudyNotion. We provide the tools and skills to teach what you love.
             </p>
 
-            <div className='w-full sm:w-fit flex justify-center sm:justify-start'>
+            <div className='w-full sm:w-fit flex justify-center'>
                 <CTAButton active={true} linkto={"/signup"}>
                     <div className='flex flex-row gap-2 items-center text-center'>
                         Start Learning Today

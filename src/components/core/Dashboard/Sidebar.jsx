@@ -32,7 +32,8 @@ export default function Sidebar() {
       {/* Menu icon for mobile */}
       <button
         // absolute left-4 top-4 z-50 text-white md:hidden 
-        className="fixed  left-2 top-1/2 -translate-y-1/2 z-50 p-2 text-white rounded-full bg-richblack-700 shadow-lg backdrop-blur-sm md:hidden"
+        className="fixed left-2 top-1/2 -translate-y-1/2 z-50 p-2 text-white rounded-full 
+             bg-white/10 backdrop-blur-md shadow-lg border border-white/20 md:hidden"
         onClick={() => setIsSidebarOpen(true)}
       >
         <HiOutlineMenuAlt2 size={20} />

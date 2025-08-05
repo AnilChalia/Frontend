@@ -46,12 +46,14 @@ const Footer = () => {
                   );
                 })}
               </div>
+
               <div className="flex gap-3 text-lg">
-                <FaFacebook />
+                <FaFacebook/>
                 <FaGoogle />
                 <FaTwitter />
                 <FaYoutube />
               </div>
+
               <div></div>
             </div>
 

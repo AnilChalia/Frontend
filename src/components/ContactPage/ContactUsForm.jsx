@@ -125,14 +125,14 @@ const ContactUsForm = () => {
               })}
             </select>
           </div>
-
+   {/* w-[calc(100%-100px)] */}
           <div className="flex w-[calc(100%-100px)] flex-col gap-2">
             <input
               type="number"
               name="phonenumber"
               id="phonenumber"
               placeholder="12345 67890"
-              className="form-style"
+              className="form-style w-full !py-[10px]"
               {...register("phoneNo", {
                 required: {
                   value: true,
