@@ -41,7 +41,8 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
   return (
     <>
       {/* Mobile Toggle Button (only small screens) */}
-      <div className="fixed z-50 left-2 top-1/2 -translate-y-1/2 sm:hidden">
+      {!isMobileSidebarOpen && (
+      <div className="fixed z-50 left-2 top-[70vh] -translate-y-1/2 sm:hidden">
         <button
           onClick={() => setIsMobileSidebarOpen(true)}
           className="w-10 h-10 flex items-center justify-center rounded-full bg-richblack-700 text-white shadow-lg backdrop-blur-sm  bg-white/10 text-white shadow-lg backdrop-blur-md border border-white/20"
@@ -49,6 +50,7 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
           ☰
         </button>
       </div>
+      )}
 
       {/* Sidebar Container */}
       <div

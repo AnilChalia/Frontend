@@ -30,14 +30,14 @@ export default function Sidebar() {
   return (
     <>
       {/* Menu icon for mobile */}
-      <button
+      {/* <button
         // absolute left-4 top-4 z-50 text-white md:hidden 
         className="fixed left-2 top-1/2 -translate-y-1/2 z-50 p-2 text-white rounded-full 
              bg-white/10 backdrop-blur-md shadow-lg border border-white/20 md:hidden"
         onClick={() => setIsSidebarOpen(true)}
       >
-        <HiOutlineMenuAlt2 size={20} />
-      </button>
+     < HiOutlineMenuAlt2/>
+      </button> */}
 
       {/* Backdrop when sidebar is open (mobile only) */}
       {isSidebarOpen && (

@@ -14,6 +14,7 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
+
   const {
     thumbnail: ThumbnailImage,
     price: CurrentPrice,
@@ -24,7 +25,7 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
     copy(window.location.href)
     toast.success("Link copied to clipboard")
   }
-
+  // console.log("course", course)
   const handleAddToCart = () => {
     console.log("Clicked Add to Cart");
     if (user && user?.accountType === ACCOUNT_TYPE.INSTRUCTOR) {
@@ -46,14 +47,12 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
     })
   }
 
-  // console.log("Student already enrolled ", course?.studentsEnroled, user?._id)
-
   return (
     <>
       <div
         className={`flex flex-col gap-4 rounded-md bg-richblack-700 p-4 text-richblack-5`}
       >
-        {/* Course Image */}
+        {/* Course Image*/}
         <img
           src={ThumbnailImage}
           alt={course?.courseName}
@@ -62,10 +61,10 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
 
         <div className="px-4">
           <div className="space-x-3 pb-4 text-3xl font-semibold">
-            Rs. {CurrentPrice}
+            Rs.{CurrentPrice}
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 ">
             <button
               className="yellowButton"
               onClick={
@@ -79,7 +78,7 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
                 : "Buy Now"}
             </button>
             {(!user || !course?.studentsEnrolled.includes(user?._id)) && (
-              <button onClick={handleAddToCart} className="blackButton relative z-[9999]">
+              <button onClick={handleAddToCart} className="blackButton relative z-10">
                 Add to Cart
               </button>
             )}
@@ -121,4 +120,3 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
 }
 
 export default CourseDetailsCard
-

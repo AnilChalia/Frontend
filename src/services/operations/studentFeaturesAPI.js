@@ -73,7 +73,7 @@ export async function buyCourse(token, courses, userDetails, navigate, dispatch)
                    paymentId: response.razorpay_payment_id,
                 }, token);
 
-
+                console.log(options);
                 //verifyPayment
                 verifyPayment({...response, courses}, token, navigate, dispatch);
             }
