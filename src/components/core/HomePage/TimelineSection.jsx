@@ -38,9 +38,9 @@ const TimelineSection = () => {
             {
                 timeline.map( (element, index) => {
                     return (
-                        <div className='flex flex-row gap-6' key={index}>
+                        <div className='flex flex-row gap-6 text-base' key={index}>
 
-                            <div className='w-[50px] h-[50px] bg-white flex items-center'>
+                            <div className='w-[40px] h-[40px] bg-white flex item-center'>
                                 <img src={element.Logo} />
                             </div>
 

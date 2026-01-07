@@ -41,7 +41,7 @@ const Home = () => {
             With our online coding courses, you can learn at your own pace, from anywhere in the world, and get access to a wealth of resources, including hands-on projects, quizzes, and personalized feedback from instructors. 
         </div>
 
-        <div className='flex flex-row gap-7 mt-8'>
+        <div className='flex flex-row gap-7 mt-8 mb-8'>
             <CTAButton active={true} linkto={"/about"}> 
                 Learn More
             </CTAButton>
@@ -51,7 +51,7 @@ const Home = () => {
             </CTAButton>
         </div>
 
-        <div className='mx-3  my-7 shadow-[10px_-5px_50px_-5px] shadow-blue-200 '>
+        <div className='mx-3  my-7  shadow-[10px_-5px_50px_-5px] shadow-blue-200 '>
             <video
             
             className='shadow-[20px_20px_rgba(255,255,255)] '
@@ -156,7 +156,7 @@ const Home = () => {
                     <div className='h-[150px]'></div>
                     <div className='flex flex-row gap-7 text-white '>
                         <CTAButton active={true} linkto={"/signup"}>
-                            <div className='flex items-center gap-3' >
+                            <div className='flex items-center gap-3'>
                                 Explore Full Catalog
                                 <FaArrowRight />
                             </div>

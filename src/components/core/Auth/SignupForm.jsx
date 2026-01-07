@@ -157,7 +157,7 @@ function SignupForm() {
             />
             <span
               onClick={() => setShowPassword((prev) => !prev)}
-              className="absolute right-3 top-[38px] z-[10] cursor-pointer"
+              className="absolute right-2 top-[38px] z-[10] cursor-pointer"
             >
               {showPassword ? (
                 <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
@@ -168,7 +168,7 @@ function SignupForm() {
           </label>
 
           <label className="relative w-full">
-            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+            <p className="mb-1 text-[0.875rem] leading-[1.370rem] text-richblack-5">
               Confirm Password <sup className="text-pink-200">*</sup>
             </p>
             <input
@@ -177,7 +177,7 @@ function SignupForm() {
               name="confirmPassword"
               value={confirmPassword}
               onChange={handleOnChange}
-              placeholder="Confirm Password"
+              placeholder="Enter Password"
               style={{
                 boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
               }}
@@ -185,7 +185,7 @@ function SignupForm() {
             />
             <span
               onClick={() => setShowConfirmPassword((prev) => !prev)}
-              className="absolute right-3 top-[38px] z-[10] cursor-pointer"
+              className="absolute right-2 top-[38px] z-[10]  cursor-pointer"
             >
               {showConfirmPassword ? (
                 <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
@@ -194,6 +194,7 @@ function SignupForm() {
               )}
             </span>
           </label>
+
         </div>
 
         {/* Submit Button */}

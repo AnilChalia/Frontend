@@ -60,7 +60,7 @@ const LearningGrid = () => {
             } ${card.order === 3 && "xl:col-start-2"}  `}
           >
             {card.order < 0 ? (
-              <div className="xl:w-[90%] flex flex-col gap-3 pb-10 xl:pb-0">
+              <div className="xl:w-[90%] flex flex-col gap-3 pb-10 xl:pb-0 text-center xl:text-left items-center xl:items-start">
                 <div className="text-4xl font-semibold ">
                   {card.heading}
                   <HighlightText text={card.highlightText} />
@@ -76,7 +76,7 @@ const LearningGrid = () => {
                 </div>
               </div>
             ) : (
-              <div className="p-8 flex flex-col gap-8">
+              <div className="p-8 flex flex-col gap-8 text-center xl:text-left items-center xl:items-start">
                 <h1 className="text-richblack-5 text-lg">{card.heading}</h1>
 
                 <p className="text-richblack-300 font-medium">

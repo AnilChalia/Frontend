@@ -10,13 +10,13 @@ const CodeBlocks = ({
     <div className={`flex ${position} my-20 justify-between flex-col lg:gap-10 gap-10`}>
       
     {/*Section 1*/}
-    <div className='w-[50%] lg:w-[50%] flex flex-col gap-8'>
+    <div className='w-full lg:w-[50%] flex flex-col gap-8 items-center text-center lg:items-start lg:text-left'>
         {heading}
-        <div className='text-richblack-300 text-base font-bold -mt-3 '>
+        <div className='text-richblack-300 text-base font-bold -mt-3 text-center lg:text-left'>
             {subheading}
         </div>
 
-        <div className='flex gap-7 mt-7'>
+        <div className='flex gap-7 mt-7 justify-center lg:justify-start'>
             <CTAButton active={ctabtn1.active} linkto={ctabtn1.linkto}>
                 <div className='flex gap-2 items-center'>
                     {ctabtn1.btnText}
@@ -28,8 +28,6 @@ const CodeBlocks = ({
                     {ctabtn2.btnText}
             </CTAButton>
         </div>
-
-
     </div>
 
      {/*Section 2*/}
@@ -74,5 +72,4 @@ const CodeBlocks = ({
 }
 
 export default CodeBlocks
-
 
