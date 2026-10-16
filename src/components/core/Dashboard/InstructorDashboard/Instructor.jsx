@@ -52,7 +52,7 @@ export default function Instructor() {
       }
       setLoading(false)
     })()
-  }, [])
+  }, [token])
 
 
   const totalAmount = instructorData?.reduce(

@@ -24,7 +24,7 @@ export default function MyCourses() {
     }
     fetchCourses()
     
-  }, [])
+  }, [token])
 
   return (
     <div>
