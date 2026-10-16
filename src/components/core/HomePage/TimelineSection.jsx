@@ -41,7 +41,7 @@ const TimelineSection = () => {
                         <div className='flex flex-row gap-6 text-base' key={index}>
 
                             <div className='w-[40px] h-[40px] bg-white flex item-center'>
-                                <img src={element.Logo} />
+                                <img src={element.Logo} alt="Couse timeline logo" />
                             </div>
 
                             <div>

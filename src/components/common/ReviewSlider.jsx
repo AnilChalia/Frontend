@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -18,7 +18,7 @@ import { FaStar } from "react-icons/fa";
 
 function ReviewSlider() {
   const [reviews, setReviews] = useState([]);
-  const truncateWords = 15;
+  // const truncateWords = 15;
 
   useEffect(() => {
     (async () => {

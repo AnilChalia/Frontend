@@ -7,7 +7,7 @@ import IconBtn from "../../common/IconBtn"
 
 export default function VideoDetailsSidebar({ setReviewModal }) {
   const [activeStatus, setActiveStatus] = useState("")
-  const [videoBarActive, setVideoBarActive] = useState("")
+  const [, setVideoBarActive] = useState("")
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false)
   const navigate = useNavigate()
   const location = useLocation()
@@ -36,7 +36,7 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
       setActiveStatus(courseSectionData?.[currentSectionIndx]?._id)
       setVideoBarActive(activeSubSectionId)
     })()
-  }, [courseSectionData, courseEntireData, location.pathname])
+  }, [courseSectionData, courseEntireData,sectionId,subSectionId,location.pathname])
 
   return (
     <>

@@ -8,7 +8,7 @@ import {AiOutlinePlus} from "react-icons/ai"
 import SebSectionModal from './sebSectionModal'
 import ConfirmationModal from '../../../../common/ConfirmationModal'
 import { deleteSection, deleteSubSection } from '../../../../../services/operations/courseDetailsApi'
-import { IoFastFood } from 'react-icons/io5'
+// import { IoFastFood } from 'react-icons/io5'
 import { setCourse } from '../../../../../slices/courseSlice'
 
 const NestedView = ({handleChangeEditSectionName}) => {
